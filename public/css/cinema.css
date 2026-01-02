@@ -1,0 +1,396 @@
+/* =========================
+   CINEMA UI — Global Layout
+   ========================= */
+
+/* Reset nhỏ */
+*,
+*::before,
+*::after{ box-sizing:border-box; }
+img{ max-width:100%; height:auto; }
+
+/* ===== Topbar fixed ===== */
+.topbar{
+  height:52px;
+  background:#ebe7d8;           /* kem nhạt */
+  border-bottom:1px solid #e2decf;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  z-index:1030;
+}
+.has-fixed-top{ padding-top:52px; } /* để nội dung không bị đè */
+
+/* Topbar content */
+.btn-hamburger{
+  background:#a17c3b; color:#fff; border:none;
+  width:36px; height:32px; display:flex; align-items:center; justify-content:center;
+  border-radius:6px;
+}
+.btn-hamburger:hover{ filter:brightness(1.05); }
+
+.fb-icon{
+  font-size:20px; color:#2346d7; margin-right:8px;
+  background:#e9e9ff; border-radius:50%; width:22px; height:22px;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.fb-text{ color:#111; font-weight:700; font-size:14px; }
+
+.role-chip{ font-weight:800; letter-spacing:.5px; font-size:13px; color:#000; }
+.btn-lang{
+  background:#5e523f; color:#fff; border:none; font-weight:700; font-size:13px;
+  padding:6px 14px; border-radius:6px;
+}
+.btn-lang:hover{ filter:brightness(1.05); }
+
+/* Brand nhỏ trên topbar (nếu dùng) */
+.topbar .brand{
+  display:flex; align-items:center; gap:.5rem;
+  font-weight:800; letter-spacing:.4px; color:#000;
+}
+.topbar .brand img{ height:26px; display:block; }
+
+/* ===== Masthead (logo to) ===== */
+.masthead{
+  background:#fff;
+  border-bottom:1px solid #eee;
+}
+.masthead .container{ padding-top:14px; padding-bottom:14px; }
+.masthead-logo{
+  height:64px; max-width:92%; object-fit:contain; display:inline-block;
+}
+
+/* ===== Page toolbar (menu ngang ở thân) ===== */
+.page-toolbar{
+  position:relative; top:0; z-index:1;      /* chạy theo luồng, không đè topbar */
+  background:#eee7d6;
+  border-top:1px solid #e2decf;
+  border-bottom:1px solid #e2decf;
+}
+.page-toolbar .container{ padding:10px 0; }
+
+.pt-btn{
+  display:inline-block;
+  padding:8px 14px;
+  background:#b08a3f; color:#fff; text-decoration:none;
+  font-weight:700; font-size:14px; border-radius:8px;
+  box-shadow:0 1px 0 rgba(0,0,0,.12);
+}
+.pt-btn:hover{ filter:brightness(1.06); color:#fff; }
+
+/* muốn dính khi cuộn? thêm class .sticky ở blade */
+.page-toolbar.sticky{ position:sticky; top:calc(52px + 64px); z-index:1025; }
+
+/* ===== Main app frame ===== */
+.app-wrap{ display:flex; min-height:calc(100vh - 180px); } /* trừ header/footer tuỳ trang */
+
+/* Sidebar trái (Admin/User) */
+.sidebar{
+  width:240px; min-width:240px;
+  background:#b08a3f; color:#fff;
+  padding:20px 16px;
+  border-top-right-radius:12px;
+  border-bottom-right-radius:12px;
+  box-shadow:4px 0 8px rgba(0,0,0,.08);
+  transition:width .28s ease;
+}
+.sidebar .menu-title{
+  font-weight:800; margin-bottom:12px; letter-spacing:.2px;
+}
+.sidebar .menu a{
+  display:block; color:#fff; text-decoration:none;
+  margin-bottom:6px; font-weight:600; padding:6px 8px; border-radius:6px;
+}
+.sidebar .menu a:hover{ background:rgba(255,255,255,.12); color:#fffbe9; }
+
+/* Thu gọn sidebar bằng class ở body */
+.sidebar-collapsed .sidebar{ width:0; min-width:0; overflow:hidden; }
+
+/* (Tuỳ chọn) overlay mode: nếu muốn sidebar phủ lên thay vì co layout,
+   thêm class 'sidebar-overlay' vào body trong JS */
+.sidebar-overlay .sidebar{
+  position:fixed; left:0; top:52px; bottom:0; z-index:1020;
+}
+.sidebar-overlay.sidebar-collapsed .sidebar{
+  transform:translateX(-100%); transition:transform .25s ease;
+}
+
+/* Nội dung chính */
+.content{ flex:1; padding:24px; background:#fff; }
+
+/* ===== Footer ===== */
+.brand-footer{
+  background:#fff; border-top:1px solid #eee; margin-top:40px;
+}
+.brand-footer .wrap{ padding:18px 0; color:#7a7a7a; font-size:.9rem; }
+.brand-footer .logo{ font-weight:900; color:#b23c21; letter-spacing:1px; }
+
+/* ===== Utilities ===== */
+.card-blank{
+  border:1px dashed #d8d8d8; border-radius:10px; padding:24px; background:#fafafa;
+}
+.section-title{
+  font-weight:800; margin-bottom:12px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px){
+  .sidebar{ width:210px; min-width:210px; }
+}
+@media (max-width: 768px){
+  .fb-text{ display:none; }          /* chỉ hiện icon FB trên mobile */
+  .masthead-logo{ height:56px; }
+  .content{ padding:18px; }
+}
+@media (max-width: 576px){
+  .pt-btn{ padding:7px 12px; font-size:13px; }
+  .masthead-logo{ height:52px; }
+}
+/* ===== PAGE TOOLBAR (menu ngang) ===== */
+.page-toolbar {
+  background: #f1ecdd;
+  border-bottom: 1px solid #e4dcc7;
+  padding: 12px 0;
+  position: relative;
+  z-index: 100;
+}
+
+/* Gạch tiêu đề ở giữa trang (phần header tiêu đề) */
+.section-head {
+  background: #efeadd;
+  text-align: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #ddd3b8;
+}
+.section-head h2 {
+  font-weight: 800;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+.section-head .underline {
+  width: 80px;
+  height: 2px;
+  background: #222;
+  margin: 0 auto;
+}
+/* ===== Section head (tiêu đề giữa + gạch mảnh) ===== */
+.section-head{
+  position: relative;
+  background: #efeadd;                 /* nền kem */
+  border-bottom: 1px solid #e6e0cf;
+  padding: 14px 0 18px;
+}
+.section-title-center{
+  margin: 0;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .4px;
+  font-size: 20px;
+  color: #0c0c0c;
+}
+.head-underline{
+  display:block; width:150px; height:2px; background:#2e2e2e;
+  margin: 8px auto 0; border-radius:2px;
+}
+
+
+
+
+
+
+/* ===== Admin nav (menu ngang) ===== */
+.admin-nav{
+  background:#f1ecdd;                 /* nền kem */
+  border-top:1px solid #e9e1cc;
+  border-bottom:1px solid #e9e1cc;
+}
+.admin-nav .container{ min-height:48px; }
+
+/* danh sách ngang, căn giữa */
+.admin-menu{
+  list-style:none; margin:0 auto; padding:0;
+  display:flex; gap:36px; align-items:center; justify-content:center;
+  flex-wrap:wrap;
+}
+.admin-menu li a{
+  display:block; text-decoration:none;
+  color:#111; font-weight:800; font-size:14px; letter-spacing:.2px;
+  padding:12px 0;
+  position:relative;
+}
+.admin-menu li a:hover{ color:#000; }
+/* underline khi hover/active */
+.admin-menu li a::after{
+  content:""; position:absolute; left:0; right:0; bottom:6px;
+  height:2px; background:transparent; margin:auto; width:0; transition:width .18s ease, background .18s ease;
+}
+.admin-menu li:hover a::after{ background:#2b2b2b; width:60%; }
+.admin-menu li.active a{ color:#000; }
+.admin-menu li.active a::after{ background:#2b2b2b; width:60%; }
+
+/* nút hamburger cho mobile */
+.btn-hamburger{
+  background:#b08a3f; color:#fff; border:none; border-radius:8px;
+  width:38px; height:34px; display:flex; align-items:center; justify-content:center;
+}
+
+/* Mobile: menu thu gọn để trong nút hamburger */
+@media (max-width: 768px){
+  .admin-menu{
+    position:fixed; left:0; right:0; top:calc(52px + 56px);   /* dưới topbar + logo (tuỳ layout của bạn) */
+    background:#f1ecdd; border-top:1px solid #e9e1cc; border-bottom:1px solid #e9e1cc;
+    flex-direction:column; align-items:flex-start; gap:0; padding:8px 14px;
+    transform:translateY(-20px); opacity:0; pointer-events:none;
+    transition:transform .18s ease, opacity .18s ease;
+    z-index:1040;
+  }
+  .admin-nav.open .admin-menu{
+    transform:translateY(0); opacity:1; pointer-events:auto;
+  }
+  .admin-menu li a{ padding:10px 6px; width:100%; }
+  .admin-menu li a::after{ display:none; }
+}
+
+/* ===== Section head (tiêu đề giữa + gạch) ===== */
+.section-head{
+  background:#efeadd; text-align:center; padding:16px 0 18px;
+  border-bottom:1px solid #ddd3b8;
+}
+.section-title-center{ margin:0; font-weight:800; font-size:20px; }
+.head-underline{ display:block; width:160px; height:2px; background:#2f2f2f; margin:8px auto 0; border-radius:2px; }
+@media (max-width:576px){ .section-title-center{ font-size:18px; } .head-underline{ width:120px; } }
+
+
+
+
+
+/* ===== Dropdown user ===== */
+.dropdown-admin {
+  position: relative;
+}
+
+.role-chip {
+  background: none;
+  border: none;
+  color: #000;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dropdown-menu-admin {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #fff;
+  border: 1px solid #d1c9b8;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 6px 0;
+  min-width: 140px;
+  list-style: none;
+  margin: 0;
+  display: none;
+  z-index: 1050;
+}
+.dropdown-menu-admin.show {
+  display: block;
+}
+
+.dropdown-item-admin {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #333;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.dropdown-item-admin:hover {
+  background: #f6f2e6;
+  color: #000;
+}
+/* ===== Căn đều tuyệt đối cho hàng công cụ ===== */
+.admin-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Input + nút cùng chiều cao */
+.admin-tools .form-control,
+.admin-tools .btn-icon,
+.admin-tools .btn-add {
+  height: 44px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nút + Thêm tài khoản: bo tròn đều */
+.admin-tools .btn-add {
+  padding: 0 22px !important;
+  border-radius: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Icon căn giữa chính xác */
+.admin-tools i {
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Ô input: gọn hơn, nhưng vẫn dài */
+.admin-tools .form-control {
+  padding: 10px 16px !important;
+  min-width: 340px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* Mobile: tự co gọn */
+@media (max-width: 576px) {
+  .admin-tools .form-control { min-width: 220px; flex: 1; }
+}
+
+/* Căn chiều cao control trong bảng */
+.table .btn.btn-sm,
+.table .input-group-sm .form-control,
+.table .input-group-sm .input-group-text {
+  height: 32px;
+  line-height: 32px;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+/* =========================
+   FIX ICON / SVG BỊ PHÓNG TO (GLOBAL)
+   ========================= */
+
+/* Bootstrap Icons */
+.bi,
+i.bi {
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+/* SVG icon (pagination, carousel, admin) */
+svg,
+svg.bi,
+.bi svg {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+/* Riêng mũi tên carousel Bootstrap */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 32px !important;
+  height: 32px !important;
+  background-size: 100% 100% !important;
+}
+
+

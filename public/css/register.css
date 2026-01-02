@@ -1,0 +1,89 @@
+/* ===== HEADER ===== */
+.navbar-top {
+  position: sticky;
+  top: 0;
+  background: #efe5d3;
+  z-index: 1000;
+  padding: 8px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+}
+
+.nav-left a, .nav-right a {
+  color: #222;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 15px;
+}
+.nav-right button {
+  background: #8b7b63;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+.nav-right button:hover { background: #5f5241; }
+
+/* ===== LOGO ===== */
+.sticky-logo {
+  position: sticky;
+  top: 45px; /* cách ngay dưới header */
+  background: #fff9f0;
+  z-index: 900;
+  text-align: center;
+  padding: 10px 0;
+}
+.sticky-logo img {
+  height: 80px;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+/* ===== FORM ===== */
+.register-wrapper {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 700px;
+}
+.register-card {
+  background: #e6cd9a;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.form-group {
+  margin-bottom: 15px;
+}
+label {
+  font-weight: 700;
+  color: #222;
+  display: block;
+  margin-bottom: 5px;
+}
+input {
+  width: 100%;
+  background: #f2efe3;
+  border: 1px solid #d0c7b1;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 15px;
+}
+input:focus {
+  border-color: #d32f2f;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(211,47,47,.2);
+}
+.btn-register {
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn-register:hover {
+  background: #b71c1c;
+}

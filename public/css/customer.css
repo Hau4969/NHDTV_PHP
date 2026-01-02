@@ -1,0 +1,62 @@
+/* File: public/assets/css/customer.css */
+
+/* Màu nền nhẹ nhàng đồng bộ với hình ảnh */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f6ef; 
+}
+
+/* --- HEADER --- */
+
+.top-bar {
+    background-color: #ffffff;
+}
+.top-bar .btn-dark {
+    background-color: #555;
+    border: none;
+    font-weight: bold;
+}
+.top-bar .btn-dark:hover {
+    background-color: #333;
+}
+
+/* --- PAGE TITLE BAR (QUẢN LÝ KHÁCH HÀNG) --- */
+
+.page-title-bar {
+    background-color: #efe6d6; /* Màu nền kem nhạt */
+}
+
+/* Icon Menu (Màu Nâu đất) */
+.menu-toggle-btn {
+    background-color: #bfa877; 
+    border-radius: 5px;
+}
+.menu-toggle-btn i {
+    color: #fff;
+}
+
+/* Tiêu đề */
+.page-title-bar h4 {
+    color: #000;
+    font-size: 1.5rem;
+}
+.underline-title {
+    width: 100px;
+    height: 3px;
+    background-color: #d82323; /* Màu đỏ của CINEMA */
+}
+
+/* --- FOOTER --- */
+
+footer {
+    background-color: #ffffff;
+    font-size: 0.8rem;
+}
+.footer-company {
+    color: #555;
+}
+
+/* --- DASHBOARD SIDEBAR CUSTOM --- */
+.card-title.text-danger {
+    color: #d82323 !important;
+}

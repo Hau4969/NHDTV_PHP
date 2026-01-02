@@ -1,0 +1,16 @@
+.role-badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:600;
+  background:#f3f4f6;    /* xám nhạt */
+  color:#111827;         /* xám đậm */
+  border:1px solid #e5e7eb;
+}
+.role-badge--admin{
+  background:#a17c3b;    /* vàng nâu theo theme */
+  color:#fff;
+  border-color:#946f32;
+  box-shadow:0 0 0 2px rgba(161,124,59,.15) inset;
+}

@@ -1,0 +1,20 @@
+/* Edit layout button movies */
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.movie-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.movie-overlay.show-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
