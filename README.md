@@ -2,7 +2,7 @@
 
 ## 🧾 Thông tin chung
 **Tên đề tài:** Hệ thống quản lý vé xem phim  
-**Môn học:** Nhập môn Công nghệ phần mềm  
+**Môn học:** Lập trình PHP
 **Thành viên nhóm:** Nhóm NHDTV
 **Giảng viên hướng dẫn:** GV. Nguyễn Quốc Trung
 
