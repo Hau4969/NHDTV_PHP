@@ -51,7 +51,6 @@ Xây dựng một website giúp khách hàng:
 ### 1️⃣ Clone project về máy
 ```
 git clone https://github.com/Hau4969/NHDTV_PHP
-cd Quan-ly-ve-xem-phim
 ```
 ### 2️⃣ Cài đặt package
 ```
