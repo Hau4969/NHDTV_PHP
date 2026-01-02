@@ -3,8 +3,8 @@
 ## 🧾 Thông tin chung
 **Tên đề tài:** Hệ thống quản lý vé xem phim  
 **Môn học:** Nhập môn Công nghệ phần mềm  
-**Thành viên nhóm:** Nhóm 5
-**Giảng viên hướng dẫn:** GV. Lê Thanh Thoại
+**Thành viên nhóm:** Nhóm NHDTV
+**Giảng viên hướng dẫn:** GV. Nguyễn Quốc Trung
 
 ### 🔧 Công nghệ sử dụng
 - **Frontend:** HTML5, CSS3, JavaScript, Bootstrap 5, Blade Template  
@@ -50,7 +50,7 @@ Xây dựng một website giúp khách hàng:
 
 ### 1️⃣ Clone project về máy
 ```
-git clone https://github.com/TRAN-THUY-NGOC/Quan-ly-ve-xem-phim.git
+git clone https://github.com/Hau4969/NHDTV_PHP
 cd Quan-ly-ve-xem-phim
 ```
 ### 2️⃣ Cài đặt package
